@@ -1,0 +1,30 @@
+---
+title: "R Markdown Presentation & Plotly"
+author: "rucrbser"
+date: "May 7, 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+```
+
+
+## Assisted Living Facilities
+
+```{r, warning=FALSE}
+Facilities <- read.csv("Assisted_Living_Facilities.csv")
+
+plot_ly(Facilities, y = ~Facilities$councilDistrict, 
+        color = ~Facilities$policeDistrict, type = "box")
+```
+
+
+## Datasource
+
+[Open Baltimore - Assisted Living Facilities](https://data.baltimorecity.gov/Health/Assisted-Living-Facilities/q2vm-e9dp)
+
+
+
+
